@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroVideography</title>
+
+    <style>
+        body {
+            font-family: Raleway, sans-serif;
+            margin: 20px;
+        }
+
+        .size-controls {
+            margin-bottom: 15px;
+        }
+
+        .size-controls button {
+            margin: 8px 14px;
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /*-----------
+        General Video Player Styles
+        -----------*/
+
+        /* Applies thes styles to the video player */
+
+        video {
+            display: block; /* Places the video on its own line */
+            width: 100%; /* Makes the video fill the available content width */
+            max-width: 100%; /* Ensures the video does not exceed the width of its container */
+            aspect-ratio: 16 / 9; /* Maintains a 16:9 aspect ratio */
+            height: auto; /* Adjusts the height automatically based on the width */
+            background-color: black; /* Sets a black background for the video player */
+            transition: width 0.3s ease, height 0.3s ease; /* Smooth transition for width and height changes */
+        }
+
+        /*-----------
+        Different Video Sizes
+        -----------*/
+
+        /* Small Video 320px width */
+        .video.small {
+            width: 320px;
+            height: auto;
+        }
+        .video.medium {
+            width: 640px;
+            height: auto;
+        }
+        .video.large {
+            width: 1280px;
+            height: auto;
+        }
+        .video.fullscreen {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>AstroVideography</h1>
+    <p>Watch the Video</p>
+
+        <!-------------
+        Different Video Sizes
+        ------------->
+    <!-- Group the buttons together -->
+    <div class="size-controls">
+
+        <!-- Tells visitors what the buttons contols-->
+        <strong> Video Size </strong>
+
+        <!-- When clicked, calls the Javascript function and changes the video width to 320px-->
+         <button onclick="changeSize('small')">Small</button>
+
+         <!-- Changes the video width to 480px-->
+         <button onclick="changeSize('medium')">Medium</button>
+         
+         <!-- Changes the video width to 1280px-->
+         <button onclick="changeSize('large')">Large</button>
+
+         <!-- Changes the video width to available content width-->
+         <button onclick="changeSize('fullscreen')">Fullscreen</button>
+
+    </div>
+
+    <!-------------
+    Video Player
+    ------------->
+    <!--
+    id="myVideo" gives the video a unique name that JS can use to find it
+
+    class="fullscreen" sets the initial size of the video to fill the available content width
+
+    controls displays the built-in play, pause, volume and other controls
+    -->
+
+    <video id="myVideo" class="fullscreen" controls>
+        <source src="12336940-hd_1920_1028_60fps.mp4" type="video/mp4">
+        Sorry, your browser cannot display this video.
+    </video>
+
+    <!-- JavaScript: Change Video Size-->
+
+    <script>
+        //This function runs whenever a size button is clicked
+        //The word "size" receives the value from the button
+        //such as "small", "medium", "large" or "fullscreen"
+
+        function changeSize(size) {
+            //Fins the video element using its unique ID
+            const video = document.getElementById('myVideo');
+
+            //remove all four possible size classes
+            //this prevents old size setting from remaining active
+            video.classList.remove("small", "medium", "large", "fullscreen");
+
+            //Adds the new size class selected by the visitor
+            //The CSS then apples the mathching width
+            video.classList.add(size);
+        }
+    </script>
+
+</body>
+
+</html>
