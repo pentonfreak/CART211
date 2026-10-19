@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Video</title>
+
+    <style>
+        /* Remove the default spacing and makes the page fill the screen */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /*Re*/
+
+        .background-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.45);
+            z-index: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 2;
+
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 15px;
+            color: white;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: white;
+            text-align: center;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!---BG video that plays automatically and repeats--->
+    <video class="background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+    tabindex="-1">
+    <source src="12336940-hd_1920_1028_60fps.mp4" type="video/mp4">
+    Your browser does not support background videos.
+    </video>
+
+    <!--- Darkens the BG video so that the text is visible --->
+    <div class="overlay"></div>
+
+    <main class="content">
+        <h1>Astrography Video</h1>
+        <p>Enjoy the video in the background</p>
+    </main>
+</body>
+</html>
