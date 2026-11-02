@@ -11,23 +11,80 @@ body {
 }
 
 .menu1 {
-    display: flex;
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
     background: white;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    z-index: 1001;
 }
 
 .menu1 a {
     display: block;
+    padding: 20px;
     text-decoration: none;
-    color: black;
+    color: grey;
 }
+
+.hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*horizontally center its content when using flexbox*/
+}
+
+.hamburger-menu button {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: grey;
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-icon span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 2px;
+    background-color: white;
+}
+
+.close-menu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 0;
+    background: transparent;
+    font-size: 2em;
+    color: grey;
+    cursor: pointer;
+}
+
+.menu-deployed {
+    display: flex;
+}
+
 
 /*MAIN CONTENT AND HEADING STYLES*/
 
-#wrapper {
+.wrapper {
     width: 90%;
     margin: 0 auto;
+}
+
+header {
+    width: 100%;
 }
 
 h1 {
@@ -38,12 +95,17 @@ h1 {
     margin-bottom: 1em;
 }
 
-h2 {
+h3 {
     margin-top: 0px;
-    margin-bottom: 30px;
-    text-align: right;
+    margin-bottom: 10px;
+    text-align: left;
     font-size: 20px;
     color: darkgrey
+}
+
+.stories_title {
+    text-align: right;
+    font-size: 3em;
 }
 
 .intro {
@@ -55,13 +117,20 @@ h2 {
 /*NAVIGATION BAR*/
 
 nav {
-    display: grid;
-    /*The first column takes 60% of the grid width
-    Second column has the remaining available space*/
-    grid-template-columns: 60% 1fr;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 0 50px;
+    padding: 10px 20px;
+    line-height: 30px;
+    position: relative;
+    border-bottom: 4px solid black;
+    background: black;
+    z-index: 1000;
     font-size: 2em;
-    margin-top: 50px;
-
+    color: white;
 }
 
 .logo {
@@ -70,7 +139,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 
@@ -120,6 +189,30 @@ footer {
 footer a {
     text-decoration: none;
     color: black;
+}
+
+/*Story Page Layout*/
+
+/*Left column of the story page*/
+
+.left_stories {
+    grid-column: 1 / 6;
+    margin: 0;
+    padding: 0;
+}
+
+/*Right column containing the story text*/
+
+.stories {
+    grid-column: 7 / 13;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+
+.stories p {
+    margin-top: 0;
 }
 
 
@@ -282,7 +375,7 @@ footer a {
 }
 
 .social p {
-    margin-top: 10ox;
+    margin-top: 10px;
     margin-bottom: 30px;
     color: grey;
     text-align: center;
@@ -296,7 +389,7 @@ footer a {
     display: flex;
     /*Stack the children vertically*/
     flex-direction: column;
-    /*Center tge children horizontally*/
+    /*Center the children horizontally*/
     align-items: center;
     text-align: center;
     /*Add 20px of vertical padding and no horizontal padding*/
@@ -334,4 +427,113 @@ footer a {
     margin-top: 10px;
     font-size: 1em;
     width: 100%;
+}
+
+/*RESPONSIVE DESIGN*/
+
+/*Apply these styles when the screen is 1024px wide or less*/
+
+@media (max-width: 1024px) {
+
+    h1 {
+        margin-top: 50px;
+    }
+
+    /*MOBILE CONTENT WRAPPER*/
+    .wrapper {
+        margin-top: 500px;
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        /*To prevent the wrapper from being covered by the fixed nav bar, add top padding equal to the height of the nav bar*/
+        float: none;
+    }
+
+    footer {
+        margin-top: 40px;
+        font-size: 12px;
+    }
+
+    /*TWO COLUMN MBOLE IMAGE GRID*/
+    .pict {
+        /*Change the grid to 6 columns*/
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        grid-auto-flow: row;
+        align-items: center;
+    }
+/*Restrain desktop positioning and constrain each grid item.
+The special character ^ is called a caret. In CSS, when used inside an attribute selector,
+it means "starts with'.active^= - means the attribute must start with the specicified text
+*/
+    .pict figure,
+    .pict [class^="im"] {
+        grid-column: auto;
+        grid-row: auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*Make images fit inside of their columns*/
+    .pict img {
+      display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        box-sizing: border-box;
+    }
+
+    /*Prevent hover effects from creating horizontal overflow*/
+    .pict figure:hover img,
+    .pict img:hover {
+        transform: none;
+    }
+
+    /*Keep hover text inside the image*/
+    .pict .hover-text {
+        max-width: calc(100% - 20px);
+        box-sizing: border-box;
+        white-space: normal;
+    }
+
+    /*Apply onlyon smaller screens*/
+    @media (max-width: 600px) {
+        .pict {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 5px;
+        }
+    }
+
+    /*MOBILE STORY LAYOUT*/
+    .left_stories {
+        grid-column: 1 / 3;
+        margin: 0;
+        padding: 0;
+    }
+
+    .stories {
+        grid-column: 1 / 3;
+        margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+
+    /*MOBILE BOOK GRID*/
+    .books {
+        grid-template-columns: auto auto;
+        gap: 16px;
+    }
+
 }

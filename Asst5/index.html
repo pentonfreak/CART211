@@ -51,11 +51,9 @@
 
 
 <body>
-    <!--CSS uses wrapper to control the overall width and center the content-->
-    <div class="wrapper">
-        <header>
+    <header>
 
-            <nav>
+        <nav>
                 <div class="logo">
                     <a href="index.html">
                         <img src="assets/logo.png" alt="logo" width="110" height="50">
@@ -64,14 +62,35 @@
                 </div>
 
                 <div class="menu1">
-                <a href="story1.html" class="menu1_active">STORIES</a>
-                <a href="series.html" class="menu1_active">SERIES</a>
-                <a href="index.html" class="menu1_active">ABOUT</a>
+
+                    <!--The X button closes the mobile navigation menu-->
+                    <button type="button" class="close-menu" aria-label="Close Navigation Menu" onclick="closeMenu()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+
+                    <a href="story1.html" class="menu1_active">STORIES</a>
+                    <a href="series.html" class="menu1_active">SERIES</a>
+                    <a href="index.html" class="menu1_active">ABOUT</a>
 
                 </div>
-            </nav>
-        </header>
 
+                    <!--Hamburger button displayed on mobile and tablet screens-->
+                    <div class="hamburger-menu">
+
+                    <button type="button" aria-label="Open Navigation Menu" onclick="openMenu()">
+                        <span class="menu-icon" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+                </div>
+
+        </nav>
+    </header>
+
+    <!--CSS uses wrapper to control the overall width and center the content-->
+    <div class="wrapper">
         <section>
             <article>
                 <h1>Humans of New York</h1>
@@ -247,8 +266,21 @@
                 </div>
             </div>
         </footer>
+        <!--End of the main wrapper-->
     </div>
+        <!--JavaScript toggles the mobile navigation menu.-->
+        <script>
+            const menu = document.querySelector('.menu1');
 
+            window.openMenu = function() {
+                menu.classList.add('menu-deployed');
+            };
+
+            window.closeMenu = function() {
+                menu.classList.remove('menu-deployed');
+            };
+        </script>
+        <!--End of JavaScript-->
 </body>
 
 
