@@ -29,8 +29,6 @@
             box-sizing: border-box;
         }
 
-        /*Re*/
-
         .background-video {
             position: fixed;
             inset: 0;
@@ -47,15 +45,19 @@
             z-index: 1;
         }
 
-        .content {
+        nav,
+        #wrapper {
             position: relative;
             z-index: 2;
+        }
 
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        nav a,
+        #wrapper {
+            color: white;
+        }
+
+        #wrapper article {
+            border-color: rgba(255, 255, 255, 0.6);
         }
 
         h1 {
@@ -70,6 +72,32 @@
             color: white;
             text-align: center;
 
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                float: none;
+                width: auto;
+                margin: 24px 20px 0;
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                display: flex;
+                gap: 1.25rem;
+                list-style: none;
+            }
+
+            nav a {
+                margin-bottom: 0;
+            }
+
+            #wrapper {
+                float: none;
+                width: auto;
+                margin: 20px;
+                padding: 0;
+            }
         }
     </style>
 
@@ -126,7 +154,7 @@
     playsinline
     aria-hidden="true"
     tabindex="-1">
-    <source src="assets/12336940-hd_1920_1028_60fps.mp4" type="video/mp4">
+    <source src="../assets/12336940-hd_1920_1028_60fps.mp4" type="video/mp4">
     Your browser does not support background videos.
     </video>
 
