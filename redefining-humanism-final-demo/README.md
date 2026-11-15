@@ -45,4 +45,15 @@ This is a *class project*, not a commercial surveillance system. Chapter visits,
 - Confirm the professor's exact requirements on quotations, authorship and the assigned Zuboff excerpt.
 
 ## Files
-`index.html`, `page-01.html` ... `page-10.html`, `style.css`, `script.js`, `README.md`.
+`index.html`, `README.md`, `pages/page-01.html` ... `pages/page-10.html`, `assets/css/style.css`, `assets/js/script.js`.
+
+## Understanding the code
+- Each file in `pages/` is one chapter. Its `data-page` number selects the matching
+  chapter interaction in `assets/js/script.js`.
+- The chapter HTML supplies the content and element IDs; JavaScript connects buttons,
+  sliders, and saved choices to those elements.
+- `assets/js/script.js` stores choices in the browser tab's `sessionStorage` and builds
+  the final reflection. It does not send data to a server.
+- `assets/css/style.css` starts with shared typography and layout, then groups chapter
+  visuals and responsive styles. Section headings mark the main groups.
+- `index.html` redirects visitors to Chapter 1.
