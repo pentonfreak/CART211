@@ -10,6 +10,27 @@ const defaults = {
   signals: [],
 };
 
+const recommendedItems = new Map([
+  ['save', 'Aegis Shield'],
+  ['treasure', 'Silver Dagger'],
+  ['investigate', 'Seer Lens'],
+]);
+
+const merchants = new Map([
+  ['save', {
+    text: 'You chose to protect strangers. A shield would suit someone so willing to put themselves in danger.',
+    item: 'shield',
+  }],
+  ['treasure', {
+    text: 'I hear you know the value of silver. Perhaps a precise blade would be worth your investment.',
+    item: 'dagger',
+  }],
+  ['investigate', {
+    text: 'I have something for those who cannot leave a mystery untouched. Take a closer look.',
+    item: 'lens',
+  }],
+]);
+
 let state;
 try {
   state = {
@@ -25,34 +46,20 @@ function save() {
   refresh();
 }
 
+function updateText(selector, value) {
+  document.querySelectorAll(selector).forEach((element) => {
+    element.textContent = value;
+  });
+}
+
 function refresh() {
-  document.querySelectorAll('[data-hero]').forEach((element) => {
-    element.textContent = state.hero;
-  });
-  document.querySelectorAll('[data-role]').forEach((element) => {
-    element.textContent = state.role.toUpperCase();
-  });
-  document.querySelectorAll('[data-gold]').forEach((element) => {
-    element.textContent = state.gold;
-  });
-  document.querySelectorAll('[data-signals]').forEach((element) => {
-    element.textContent = state.signals.length;
-  });
-  document.querySelectorAll('[data-contract]').forEach((element) => {
-    element.textContent = state.contract ? 'SIGNED' : 'PENDING';
-  });
-  document.querySelectorAll('[data-quest]').forEach((element) => {
-    element.textContent = state.quest || 'UNDECIDED';
-  });
-  document.querySelectorAll('[data-recommendation]').forEach((element) => {
-    element.textContent = state.quest === 'save'
-      ? 'Aegis Shield'
-      : state.quest === 'treasure'
-        ? 'Silver Dagger'
-        : state.quest === 'investigate'
-          ? 'Seer Lens'
-          : 'Unknown';
-  });
+  updateText('[data-hero]', state.hero);
+  updateText('[data-role]', state.role.toUpperCase());
+  updateText('[data-gold]', state.gold);
+  updateText('[data-signals]', state.signals.length);
+  updateText('[data-contract]', state.contract ? 'SIGNED' : 'PENDING');
+  updateText('[data-quest]', state.quest || 'UNDECIDED');
+  updateText('[data-recommendation]', recommendedItems.get(state.quest) || 'Unknown');
 }
 
 function signal(type, value) {
@@ -187,25 +194,10 @@ if (page === 3) {
 // Chapter 4: personalized merchant and purchases
 if (page === 4) {
   const quest = state.quest;
-  const merchant = quest === 'save'
-    ? {
-      text: 'You chose to protect strangers. A shield would suit someone so willing to put themselves in danger.',
-      item: 'shield',
-    }
-    : quest === 'treasure'
-      ? {
-        text: 'I hear you know the value of silver. Perhaps a precise blade would be worth your investment.',
-        item: 'dagger',
-      }
-      : quest === 'investigate'
-        ? {
-          text: 'I have something for those who cannot leave a mystery untouched. Take a closer look.',
-          item: 'lens',
-        }
-        : {
-          text: 'Every adventurer has a preference. I simply try to guess yours.',
-          item: '',
-        };
+  const merchant = merchants.get(quest) || {
+    text: 'Every adventurer has a preference. I simply try to guess yours.',
+    item: '',
+  };
 
   document.querySelector('#merchant-line').textContent = merchant.text;
   document.querySelector('#merchant-hint').textContent = quest
