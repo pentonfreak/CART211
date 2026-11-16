@@ -1,1 +1,204 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#080907"><meta name="description" content="Adventurer's Guild, The Price of Adventure — interactive fantasy prototype exploring behavioral data and surveillance capitalism."><title>The Guild Contract · The Adventurer's Guild</title><link rel="stylesheet" href="style.css"></head><body data-page="2"><div class="shell"><header class="topbar"><div class="brand">THE ADVENTURER'S GUILD<small>ARCHIVE OF ASH & AMBER · EST. 1248</small></div><button class="top-menu" id="mobile-menu">☰ CHAPTERS</button><div class="status"><span><i class="pip"></i>GUILD ONLINE</span><span>ACCOUNT: <b data-hero>Wanderer</b></span></div></header><div class="frame"><aside class="left"><section class="module"><p class="side-title">◆ REGISTERED ADVENTURER</p><div class="crest-small">✥</div><div class="stat-row"><span>NAME</span><strong data-hero>Wanderer</strong></div><div class="stat-row"><span>CLASS</span><strong data-role>GUARDIAN</strong></div><div class="stat-row"><span>GOLD</span><strong data-gold>150</strong></div><div class="stat-row"><span>GUILD RECORDS</span><strong data-signals>0</strong></div></section><section class="module"><p class="side-title">◇ CHAPTER SELECT</p><nav class="side-nav" aria-label="Chapter navigation"><a data-chapter="1" href="page-01.html"><span>01</span> Arrival</a><a data-chapter="2" href="page-02.html"><span>02</span> Contract</a><a data-chapter="3" href="page-03.html"><span>03</span> Burning Village</a><a data-chapter="4" href="page-04.html"><span>04</span> Merchant</a></nav></section><section class="module"><p class="side-title">GLYPHS OF THE GUILD</p><div class="icons"><span class="rune">✦</span><span class="rune">◇</span><span class="rune">✣</span><span class="rune">♜</span><span class="rune">☽</span><span class="rune">✶</span></div></section></aside><main class="hero-frame"><div class="hero-top"><span>RECORD ID / AG-002</span><span class="chapter-num">CHAPTER 02 / 04</span></div><div class="hero-content"><div class="center"><div class="eyebrow">TRANSMISSION II — THE TERMS OF SERVICE</div><span class="glyph">✒</span><h1>THE GUILD<br><em>CONTRACT</em></h1><p class="lead">Before taking your first quest, the Guild requires a signature. The clerk smiles: “It's standard procedure. Nobody has ever had a problem.”</p></div><div class="contract-box" id="contract-text" tabindex="0" aria-label="Scroll through the fictional guild contract"><h3>Article I · The Fellowship</h3><p>The Member acknowledges that the Guild exists to facilitate quests, promote camaraderie and recommend appropriate opportunities for all registered adventurers.</p><h3>Article II · The Ledger</h3><p>For the purpose of service improvement, the Guild may record mission selections, equipment preferences, time spent in deliberation, reward preferences, and any publicly or privately expressed inclination relevant to future quest allocation.</p><h3>Article III · Forecasting</h3><p>The Guild reserves the right to construct speculative profiles from these observations. Such profiles may influence future recommendations, rewards and the availability of certain missions.</p><h3>Article IV · Guild Partners</h3><p>Affiliated merchants may be furnished with hypothetical forecasts concerning what the Member could reasonably be expected to desire. The Member is not assured knowledge of the formulas behind such forecasts.</p><h3>Article V · Consent</h3><p>The Member is invited to consider the distinction between participation in a quest and the commercial uses of information produced by that participation.</p><h3>Appendix XXVII · Small Print</h3><p>This is a fictional agreement inside an educational prototype. It has no legal force and does not permit any actual tracking or transfer of user data. The choices made in this website remain in temporary browser-tab storage, and can be cleared at any time.</p></div><p class="center mono" style="font-size:10px;color:var(--gold)" id="read-state">DOCUMENT UNREAD</p><label class="checkline"><input type="checkbox" id="contract-check"><span>I accept the Guild's fictional membership terms.</span></label><div class="action-row"><a class="cta secondary" href="page-01.html">← Go Back</a><button class="cta" id="accept" disabled>Seal the Contract →</button></div></div><div class="hero-bottom"><span>ASH & AMBER / GUILD ARCHIVE</span><span>PROTOTYPE · ACT I</span><span>◈ NO EXTERNAL TRACKING</span></div></main><aside class="right"><section class="module"><p class="side-title">GUILD OBSERVATION</p><div class="crest-small">◉</div><p class="module-note">A mark is left with every decision. The Guild claims it is for your safety.</p><div class="stat-row"><span>MEMBERSHIP</span><strong data-contract>PENDING</strong></div><div class="stat-row"><span>QUEST</span><strong data-quest>UNDECIDED</strong></div><div class="stat-row"><span>PREDICTED ITEM</span><strong data-recommendation>UNKNOWN</strong></div></section><section class="module"><p class="side-title warning">⚠ CONFIDENTIAL NOTICE</p><p class="module-note">“We recommend only what is best for you.”</p><div class="thin"></div><p class="module-note">Behavioral assessment access: restricted to the Guild.</p></section><section class="module"><p class="side-title">END SESSION</p><button id="clear-data" class="cta secondary" style="width:100%;font-size:10px;padding:11px">Clear local record</button><p class="module-note">Resets the fictional player profile in this browser tab.</p></section></aside></div><footer class="footer">A FICTIONAL FANTASY STORY INSPIRED BY SHOSHANA ZUBOFF'S IDEAS ABOUT DATA EXHAUST, BEHAVIORAL PREDICTION & SURVEILLANCE CAPITALISM. NO SERVER OR REAL PERSONAL DATA COLLECTION.</footer></div><script src="script.js" defer></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#080907">
+    <meta name="description" content="Adventurer's Guild, The Price of Adventure — interactive fantasy prototype exploring behavioral data and surveillance capitalism.">
+    <title>
+      The Guild Contract · The Adventurer's Guild
+    </title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body data-page="2">
+    <div class="shell">
+      <header class="topbar">
+        <div class="brand">
+          THE ADVENTURER'S GUILD<small>ARCHIVE OF ASH & AMBER · EST. 1248</small>
+        </div>
+        <button class="top-menu" id="mobile-menu">
+          ☰ CHAPTERS
+        </button>
+        <div class="status">
+<span><i class="pip"></i>GUILD ONLINE</span><span>ACCOUNT: <b data-hero>Wanderer</b></span>
+        </div>
+      </header>
+      <div class="frame">
+        <aside class="left">
+          <section class="module">
+            <p class="side-title">
+              ◆ REGISTERED ADVENTURER
+            </p>
+            <div class="crest-small">
+              ✥
+            </div>
+            <div class="stat-row">
+<span>NAME</span><strong data-hero>Wanderer</strong>
+            </div>
+            <div class="stat-row">
+<span>CLASS</span><strong data-role>GUARDIAN</strong>
+            </div>
+            <div class="stat-row">
+<span>GOLD</span><strong data-gold>150</strong>
+            </div>
+            <div class="stat-row">
+<span>GUILD RECORDS</span><strong data-signals>0</strong>
+            </div>
+          </section>
+          <section class="module">
+            <p class="side-title">
+              ◇ CHAPTER SELECT
+            </p>
+            <nav class="side-nav" aria-label="Chapter navigation">
+              <a data-chapter="1" href="page-01.html">
+<span>01</span> Arrival
+              </a>
+              <a data-chapter="2" href="page-02.html">
+<span>02</span> Contract
+              </a>
+              <a data-chapter="3" href="page-03.html">
+<span>03</span> Burning Village
+              </a>
+              <a data-chapter="4" href="page-04.html">
+<span>04</span> Merchant
+              </a>
+            </nav>
+          </section>
+          <section class="module">
+            <p class="side-title">
+              GLYPHS OF THE GUILD
+            </p>
+            <div class="icons">
+<span class="rune">✦</span><span class="rune">◇</span><span class="rune">✣</span><span class="rune">♜</span><span class="rune">☽</span><span class="rune">✶</span>
+            </div>
+          </section>
+        </aside>
+        <main class="hero-frame">
+          <div class="hero-top">
+<span>RECORD ID / AG-002</span><span class="chapter-num">CHAPTER 02 / 04</span>
+          </div>
+          <div class="hero-content">
+            <div class="center">
+              <div class="eyebrow">
+                TRANSMISSION II — THE TERMS OF SERVICE
+              </div>
+<span class="glyph">✒</span>
+              <h1>
+                THE GUILD<br><em>CONTRACT</em>
+              </h1>
+              <p class="lead">
+                Before taking your first quest, the Guild requires a signature. The clerk smiles: “It's standard procedure. Nobody has ever had a problem.”
+              </p>
+            </div>
+            <div class="contract-box" id="contract-text" tabindex="0" aria-label="Scroll through the fictional guild contract">
+              <h3>
+                Article I · The Fellowship
+              </h3>
+              <p>
+                The Member acknowledges that the Guild exists to facilitate quests, promote camaraderie and recommend appropriate opportunities for all registered adventurers.
+              </p>
+              <h3>
+                Article II · The Ledger
+              </h3>
+              <p>
+                For the purpose of service improvement, the Guild may record mission selections, equipment preferences, time spent in deliberation, reward preferences, and any publicly or privately expressed inclination relevant to future quest allocation.
+              </p>
+              <h3>
+                Article III · Forecasting
+              </h3>
+              <p>
+                The Guild reserves the right to construct speculative profiles from these observations. Such profiles may influence future recommendations, rewards and the availability of certain missions.
+              </p>
+              <h3>
+                Article IV · Guild Partners
+              </h3>
+              <p>
+                Affiliated merchants may be furnished with hypothetical forecasts concerning what the Member could reasonably be expected to desire. The Member is not assured knowledge of the formulas behind such forecasts.
+              </p>
+              <h3>
+                Article V · Consent
+              </h3>
+              <p>
+                The Member is invited to consider the distinction between participation in a quest and the commercial uses of information produced by that participation.
+              </p>
+              <h3>
+                Appendix XXVII · Small Print
+              </h3>
+              <p>
+                This is a fictional agreement inside an educational prototype. It has no legal force and does not permit any actual tracking or transfer of user data. The choices made in this website remain in temporary browser-tab storage, and can be cleared at any time.
+              </p>
+            </div>
+            <p class="center mono" style="font-size:10px;color:var(--gold)" id="read-state">
+              DOCUMENT UNREAD
+            </p>
+            <label class="checkline">
+              <input type="checkbox" id="contract-check">
+<span>I accept the Guild's fictional membership terms.</span>
+            </label>
+            <div class="action-row">
+              <a class="cta secondary" href="page-01.html">
+                ← Go Back
+              </a>
+              <button class="cta" id="accept" disabled>
+                Seal the Contract →
+              </button>
+            </div>
+          </div>
+          <div class="hero-bottom">
+<span>ASH & AMBER / GUILD ARCHIVE</span><span>PROTOTYPE · ACT I</span><span>◈ NO EXTERNAL TRACKING</span>
+          </div>
+        </main>
+        <aside class="right">
+          <section class="module">
+            <p class="side-title">
+              GUILD OBSERVATION
+            </p>
+            <div class="crest-small">
+              ◉
+            </div>
+            <p class="module-note">
+              A mark is left with every decision. The Guild claims it is for your safety.
+            </p>
+            <div class="stat-row">
+<span>MEMBERSHIP</span><strong data-contract>PENDING</strong>
+            </div>
+            <div class="stat-row">
+<span>QUEST</span><strong data-quest>UNDECIDED</strong>
+            </div>
+            <div class="stat-row">
+<span>PREDICTED ITEM</span><strong data-recommendation>UNKNOWN</strong>
+            </div>
+          </section>
+          <section class="module">
+            <p class="side-title warning">
+              ⚠ CONFIDENTIAL NOTICE
+            </p>
+            <p class="module-note">
+              “We recommend only what is best for you.”
+            </p>
+            <div class="thin">
+            </div>
+            <p class="module-note">
+              Behavioral assessment access: restricted to the Guild.
+            </p>
+          </section>
+          <section class="module">
+            <p class="side-title">
+              END SESSION
+            </p>
+            <button id="clear-data" class="cta secondary" style="width:100%;font-size:10px;padding:11px">
+              Clear local record
+            </button>
+            <p class="module-note">
+              Resets the fictional player profile in this browser tab.
+            </p>
+          </section>
+        </aside>
+      </div>
+      <footer class="footer">
+        A FICTIONAL FANTASY STORY INSPIRED BY SHOSHANA ZUBOFF'S IDEAS ABOUT DATA EXHAUST, BEHAVIORAL PREDICTION & SURVEILLANCE CAPITALISM. NO SERVER OR REAL PERSONAL DATA COLLECTION.
+      </footer>
+    </div>
+<script src="script.js" defer></script>
+  </body>
+</html>
