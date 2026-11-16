@@ -12,5 +12,15 @@ const defaults = {
 
 let state;
 try {
-    state = {}
+    state = {
+        ...defaults,
+        ...JSON.parse(sessionStorage.getItem(STORAGE) || '{}'),
+    };
+} catch {
+    state = { ...defaults };
+}
+
+function save() {
+    sessionStorage.setItem(STORAGE, JSON.stringify(state));
+    refresh();
 }
