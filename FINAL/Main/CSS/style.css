@@ -34,6 +34,35 @@ body {
     font-family: 'Grenze Gotisch', sans-serif;
 }
 
+.glyphs {
+    display: grid;
+    grid-template-columns: repeat(3, 0.04fr);
+    gap: 7px
+}
+
+.rune {
+    border: 1px solid var(--line);
+    aspect-ratio: 1;
+    display: grid;
+    grid-area: 1px;
+    place-items: center;
+    font-family: Cinzel;
+    font-size: 19px;
+}
+
+.guild_seal {
+    width: 210px;
+    height: 210px;
+    display: grid;
+    place-items: start center;
+    margin: 8px auto 24px;
+    position: relative;
+}
+
+.guild_seal img {
+    width: 120%;
+}
+
 .brand {
     font-family: 'Grenze Gotisch', sans-serif;
     font-weight: 500;
