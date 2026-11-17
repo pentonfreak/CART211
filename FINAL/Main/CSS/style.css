@@ -54,7 +54,7 @@ body {
     width: 210px;
     height: 210px;
     display: grid;
-    place-items: start center;
+    place-items: top center;
     margin: 8px auto 24px;
     position: relative;
 }
