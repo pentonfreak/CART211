@@ -1,0 +1,84 @@
+:root {
+  --ink:#080907;
+  --panel:#10120e;
+  --cream:#f1eac2;
+  --gold:#d5ba78;
+  --dim:#aba68c;
+  --line:#6e7154;
+  --green:#b2c997;
+  --danger:#d5a18c
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  margin:0;
+  background:var(--ink);
+  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  background-image:radial-gradient(ellipse at 48% 7%,#272a1c 0,transparent 38%);
+  min-height:100vh
+}
+
+.status {
+    font-family: 'Grenze Gotisch', sans-serif;
+}
+
+.stat-row {
+    font-family: 'Grenze Gotisch', sans-serif;
+}
+
+.brand {
+    font-family: 'Grenze Gotisch', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: inherit;
+    text-decoration: none;
+    text-align: center;
+}
+
+.subtitle {
+    display: block;
+    font-family: 'Grenze Gotisch', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: inherit;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.top-menu {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border: 1px solid currentColor;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+#chapter-select[hidden] {
+    display: none;
+}
+
+footer {
+    font-size: 0.75rem;
+    text-align: center;
+    font-style: italic;
+}

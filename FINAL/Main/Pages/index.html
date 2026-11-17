@@ -6,62 +6,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="40325413_Nguyen_Khuong_Final">
     <title>Adventurer's Guild</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
 <body data-page="main">
     <div class="shell">
         <header class="topbar">
             <div class="brand">
-                THE ADVENTURER'S GUILD<small>ARCHIVE OF ASH & AMBER · EST. 1248</small>
+                The Adventurer's Guild
+                <small class="subtitle">Archive of Honor & Glory · Est. 1248</small>
             </div>
-            <button class="top-menu" id="mobile-menu">
-                ☰ CHAPTERS
+            <button class="top-menu" id="mobile-menu" type="button" aria-label="Open chapter navigation"
+                aria-controls="chapter-select" aria-expanded="false">
+                <svg class="hamburger-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M3 6h18M3 12h18M3 18h18"></path>
+                </svg>
             </button>
             <div class="status">
-                <span><i class="pip"></i>GUILD ONLINE</span><span>ACCOUNT: <b data-hero>Wanderer</b></span>
+                <span><i class="pip"></i>Guild Online</span><span> Account: <b data-hero>Wanderer</b></span>
             </div>
     </div>
         </header>
 
     <section>
         <div class="stat-row">
-            <span>NAME</span><strong data-hero>Wanderer</strong>
+            <span>Name: </span><strong data-hero>Wanderer</strong>
             </div>
             <div class="stat-row">
-                <span>CLASS</span><strong data-role>GUARDIAN</strong>
+                <span>Class: </span><strong data-role>GUARDIAN</strong>
             </div>
             <div class="stat-row">
-                <span>GOLD</span><strong data-gold>150</strong>
+                <span>Gold: </span><strong data-gold>150</strong>
             </div>
             <div class="stat-row">
-                <span>GUILD RECORDS</span><strong data-signals>0</strong>
+                <span>Guild Records: </span><strong data-signals>0</strong>
             </div>
         </div>
     </section>
 
-    <section class="module">
-        <p class="side-title">
+    <section id="chapter-select" hidden>
+        <h3 class="side-title">
             ◇ CHAPTER SELECT
-        </p>
+        </h3>
         <nav class="side-nav" aria-label="Chapter navigation">
-            <a data-chapter="1" href="index.html">
-                <span>01</span> Arrival
+            <a class="chapter" data-chapter="1" href="index.html">
+                <span>I</span> The Arrival
             </a>
 
-            <a data-chapter="2" href="page-02.html">
-                <span>02</span> Contract
+            <a class="chapter" data-chapter="2" href="page-02.html">
+                <span>II</span> The Contractual Obligation
             </a>
 
-            <a data-chapter="3" href="page-03.html">
-                <span>03</span> The Price of Adventure
+            <a class="chapter" data-chapter="3" href="page-03.html">
+                <span>III</span> The Price of Adventure
             </a>
 
-            <a data-chapter="4" href="page-04.html">
-                <span>04</span> The Guild's Record
+            <a class="chapter" data-chapter="4" href="page-04.html">
+                <span>IV</span> The Guild's Record
             </a>
         </nav>
+    </section>
+
+    <section class="module">
+        <p class="side-title">
+            Guild's Glyphs
+        </p>
+        
+        <div class="glyphs">
+            <span class="rune">✦</span><span class="rune">◇</span><span class="rune">✣</span><span class="rune">♜</span><span class="rune">☽</span><span class="rune">✶</span>
+        </div>
+    </section>
+
+    <main class="hero-frame">
+        <div class="hero-top">
+            <span>Chapter I</span>
+        </div>
+
+        <div class="hero-content">
+            <div class="eyebrow">
+                Transmission I - A New Beginning
+            </div>
+            
+            <div class="seal">
+                <img src="../Assets/Guild_Logo.png" alt="The Adventurer's Guild emblem">
+            </div>
+        </div>
+    </main>
     
-    
+
+
+    <footer>
+        <div>
+            <p>A FICTIONAL FANTASY STORY INSPIRED BY SHOSHANA ZUBOFF'S IDEAS ABOUT DATA EXHAUST, BEHAVIORAL PREDICTION & SURVEILLANCE CAPITALISM. NO SERVER OR REAL PERSONAL DATA COLLECTION.</p>
+            <p>Designed by Nguyen Khuong</p>
+            <p>© 2024 Adventurer's Guild. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../JS/script.js"></script>
 </body>
 </html>

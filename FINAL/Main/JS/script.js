@@ -24,3 +24,18 @@ function save() {
     sessionStorage.setItem(STORAGE, JSON.stringify(state));
     refresh();
 }
+
+const chapterMenuButton = document.querySelector('#mobile-menu');
+const chapterNavigation = document.querySelector('#chapter-select');
+
+if (chapterMenuButton && chapterNavigation) {
+    chapterMenuButton.addEventListener('click', () => {
+        const isOpen = chapterNavigation.hidden;
+        chapterNavigation.hidden = !isOpen;
+        chapterMenuButton.setAttribute('aria-expanded', String(isOpen));
+        chapterMenuButton.setAttribute(
+            'aria-label',
+            isOpen ? 'Close chapter navigation' : 'Open chapter navigation',
+        );
+    });
+}
