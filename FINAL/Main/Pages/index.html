@@ -20,22 +20,42 @@
                 The Adventurer's Guild
                 <small class="subtitle">Archive of Honor & Glory · Est. 1248</small>
             </div>
-            <button class="top-menu" id="mobile-menu" type="button" aria-label="Open chapter navigation"
-                aria-controls="chapter-select" aria-expanded="false">
-                <svg class="hamburger-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                    <path d="M3 6h18M3 12h18M3 18h18"></path>
-                </svg>
-            </button>
+            <div class="menu-wrap">
+                <button class="top-menu" id="mobile-menu" type="button" aria-label="Open chapter navigation"
+                    aria-controls="chapter-select" aria-expanded="false">
+                    <svg class="hamburger-icon" aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <path d="M3 6h18M3 12h18M3 18h18"></path>
+                    </svg>
+                </button>
+                <section id="chapter-select" hidden>
+                    <h3 class="side-title">◇ CHAPTER SELECT</h3>
+                    <nav class="side-nav" aria-label="Chapter navigation">
+                        <a class="chapter" data-chapter="1" href="index.html">
+                            <span>I</span> The Arrival
+                        </a>
+                        <a class="chapter" data-chapter="2" href="page-02.html">
+                            <span>II</span> The Contractual Obligation
+                        </a>
+                        <a class="chapter" data-chapter="3" href="page-03.html">
+                            <span>III</span> The Price of Adventure
+                        </a>
+                        <a class="chapter" data-chapter="4" href="page-04.html">
+                            <span>IV</span> The Guild's Record
+                        </a>
+                    </nav>
+                </section>
+            </div>
             <div class="status">
                 <span><i class="pip"></i>Guild Online</span><span> Account: <b data-hero>Wanderer</b></span>
             </div>
-    </div>
         </header>
+    </div>
 
-    <section>
-        <div class="stat-row">
-            <span>Name: </span><strong data-hero>Wanderer</strong>
+    <div class="page-layout">
+        <section class="stats-panel" aria-label="Character stats">
+            <div class="stat-row">
+                <span>Name: </span><strong data-hero>Wanderer</strong>
             </div>
             <div class="stat-row">
                 <span>Class: </span><strong data-role>GUARDIAN</strong>
@@ -46,54 +66,27 @@
             <div class="stat-row">
                 <span>Guild Records: </span><strong data-signals>0</strong>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="chapter-select" hidden>
-        <h3 class="side-title">
-            ◇ CHAPTER SELECT
-        </h3>
-        <nav class="side-nav" aria-label="Chapter navigation">
-            <a class="chapter" data-chapter="1" href="index.html">
-                <span>I</span> The Arrival
-            </a>
+        <main class="hero-frame">
+            <img class="main-frame" src="../Assets/Main_frame.png" alt="">
 
-            <a class="chapter" data-chapter="2" href="page-02.html">
-                <span>II</span> The Contractual Obligation
-            </a>
-
-            <a class="chapter" data-chapter="3" href="page-03.html">
-                <span>III</span> The Price of Adventure
-            </a>
-
-            <a class="chapter" data-chapter="4" href="page-04.html">
-                <span>IV</span> The Guild's Record
-            </a>
-        </nav>
-    </section>
-
-    <main class="hero-frame">
-        <div class="hero-top">
-            <span>Chapter I</span>
-        </div>
-
-        <div class="hero-content">
-            <div class="eyebrow">
-                Transmission I - A New Beginning
+            <div class="hero-top">
+                <span>Chapter I</span>
+                <div class="eyebrow">
+                    A New Beginning
+                </div>
             </div>
-            
-            <div class="guild_seal">
-                <img src="../Assets/Shield_Logo.png" alt="The Adventurer's Guild emblem">s
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
     
 
 
     <footer>
         <div>
-            <p>A FICTIONAL FANTASY STORY INSPIRED BY SHOSHANA ZUBOFF'S IDEAS ABOUT DATA EXHAUST, BEHAVIORAL PREDICTION & SURVEILLANCE CAPITALISM. NO SERVER OR REAL PERSONAL DATA COLLECTION.</p>
-            <p>Designed by Nguyen Khuong</p>
+            <p>A FICTIONAL FANTASY STORY INSPIRED BY SHOSHANA ZUBOFF'S IDEAS</p>
+            <p>ABOUT DATA EXHAUST, BEHAVIORAL PREDICTION & SURVEILLANCE CAPITALISM. NO SERVER OR REAL PERSONAL DATA COLLECTION.</p>
+            <p>Designed by Nguyen Khuong - #ID: 40325413</p>
             <p>© 2024 Adventurer's Guild. All rights reserved.</p>
         </div>
     </footer>

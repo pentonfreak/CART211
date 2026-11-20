@@ -34,16 +34,47 @@ body {
     font-family: 'Grenze Gotisch', sans-serif;
 }
 
-.guild_seal {
-    width: 210px;
-    place-items: center;
+.hero-frame {
     position: relative;
-    margin: 8px auto;
-    
+    width: min(849px, calc(100% - 32px));
+    margin: 32px auto;
+    aspect-ratio: 849 / 553;
 }
 
-.guild_seal img {
+.main-frame {
+    display: block;
     width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-top {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34%;
+    height: 14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Grenze Gotisch', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.1;
+}
+
+.hero-top .eyebrow {
+    max-width: 100%;
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+    letter-spacing: 0;
+}
+
+.eyebrow {
+    font-family: 'Grenze Gotisch', sans-serif;
 }
 
 .brand {
@@ -76,6 +107,14 @@ body {
     cursor: pointer;
 }
 
+.menu-wrap {
+    position: relative;
+    z-index: 5;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+}
+
 .hamburger-icon {
     width: 22px;
     height: 22px;
@@ -89,8 +128,237 @@ body {
     display: none;
 }
 
+#chapter-select {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    z-index: 10;
+    width: min(320px, calc(100vw - 24px));
+    margin: 0;
+    padding: 16px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    box-shadow: 0 12px 28px rgb(0 0 0 / 55%);
+}
+
+.side-title {
+    margin: 0 0 12px;
+    color: var(--gold);
+    font-family: 'Grenze Gotisch', sans-serif;
+}
+
+.side-nav {
+    display: grid;
+    gap: 6px;
+}
+
+.chapter {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    color: var(--cream);
+    text-decoration: none;
+}
+
+.chapter span {
+    color: var(--gold);
+    font-family: 'Grenze Gotisch', sans-serif;
+}
+
+.chapter:hover,
+.chapter:focus-visible {
+    border-color: var(--line);
+    background: rgb(213 186 120 / 10%);
+    outline: none;
+}
+
 footer {
     font-size: 0.75rem;
     text-align: center;
     font-style: italic;
+}
+
+img {
+    max-width: 100%;
+}
+
+.shell {
+    width: min(100%, 1200px);
+    margin-inline: auto;
+    padding-inline: clamp(12px, 4vw, 40px);
+}
+
+.topbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(12px, 2vw, 24px);
+    padding-block: clamp(16px, 3vw, 32px);
+}
+
+.brand {
+    grid-column: 2;
+    grid-row: 1;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+.status {
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px 16px;
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 849px) minmax(0, 1fr);
+    column-gap: clamp(16px, 2vw, 32px);
+    align-items: start;
+    width: min(100%, 1400px);
+    margin-inline: auto;
+    padding-inline: clamp(16px, 2vw, 28px);
+}
+
+.stats-panel {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    width: 100%;
+    margin-block: clamp(20px, 4vw, 40px);
+}
+
+.stat-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    padding-block: 8px;
+    border-bottom: 1px solid rgb(110 113 84 / 50%);
+    min-width: 0;
+    font-size: clamp(0.95rem, 1.8vw, 1.15rem);
+    overflow-wrap: anywhere;
+}
+
+.hero-frame {
+    grid-column: 2;
+    grid-row: 1;
+    width: min(849px, 100%);
+    margin-block: clamp(20px, 4vw, 40px);
+}
+
+.hero-top {
+    font-size: clamp(0.75rem, 1.5vw, 1rem);
+}
+
+.eyebrow {
+    font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+}
+
+footer {
+    width: min(849px, calc(100% - 32px));
+    margin: 24px auto;
+    padding-bottom: 16px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 700px) {
+    .topbar {
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    }
+
+    .brand {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: center;
+    }
+
+    .menu-wrap {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    #chapter-select {
+        right: 0;
+        left: auto;
+    }
+
+    .status {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        justify-content: space-between;
+    }
+
+    .hero-top {
+        font-size: clamp(0.55rem, 1.6vw, 0.75rem);
+    }
+
+    .hero-top .eyebrow {
+        font-size: clamp(0.45rem, 1.3vw, 0.65rem);
+    }
+}
+
+@media (max-width: 380px) {
+    .shell {
+        padding-inline: 10px;
+    }
+
+    .brand {
+        font-size: 1.25rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .status {
+        gap: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .hero-top .eyebrow {
+        font-size: 0.4rem;
+    }
+
+    .page-layout,
+    footer {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 1200px) {
+    .page-layout {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(849px, 100%);
+        margin-block: 16px 0;
+    }
+
+    .hero-frame {
+        width: min(849px, 100%);
+    }
+}
+
+@media (max-width: 720px) {
+    footer {
+        font-size: clamp(0.6rem, 1.4vw, 0.7rem);
+        line-height: 1.35;
+    }
+
+    footer p {
+        margin-block: 0.6em;
+    }
 }
