@@ -22,7 +22,7 @@ body {
   background:var(--ink);
   color:var(--cream);
   font-family:'DM Sans',sans-serif;
-  background-image:radial-gradient(ellipse at 48% 7%,#272a1c 0,transparent 38%);
+  background-image:radial-gradient(ellipse at 50% 7%,#272a1c 0,transparent 38%);
   min-height:100vh
 }
 
@@ -36,15 +36,14 @@ body {
 
 .guild_seal {
     width: 210px;
-    height: 210px;
-    display: grid;
-    place-items: top center;
-    margin: 8px auto 24px;
+    place-items: center;
     position: relative;
+    margin: 8px auto;
+    
 }
 
 .guild_seal img {
-    width: 120%;
+    width: 100%;
 }
 
 .brand {
